@@ -3,6 +3,5 @@ CloudFormation-Calismalar [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 <hr>
 
 ## Index 📜
-### CloudFormation ile yapilan calismalar burada toplandi.
 
 ### 🔖 EC2 - Autoscaling - Load Balancer - Target Group
