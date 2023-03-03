@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: |
-  Bu tam anlamaiyla neredeyse ikinci Template
+  Bu template ASG ve ELB ile tam anlamaiyla neredeyse ikinci Template
 
 Parameters: 
   VPCParameter:
