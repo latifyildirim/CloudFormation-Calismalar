@@ -1,0 +1,96 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  Kittens Carousel is a static website application deployed on AWS Simple Storage Service (S3), served through Cloudfront and Route 53 using AWS Cloudformation Service.
+Parameters:
+  DomainName:
+    Description: DNS Name of existing Amazon Route 53 hosted zone. exp. begis.link
+    Type: AWS::Route53::HostedZone::Id 
+
+  FullDomainName:
+    Description: Full domain name for the App. ex. www.begis.link
+    Type: String
+    AllowedPattern: (?!-)[a-zA-Z0-9-.]{1,63}(?<!-)
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties: 
+      AccessControl: PublicRead 
+      BucketName: !Ref FullDomainName    
+      WebsiteConfiguration: 
+        IndexDocument: index.html 
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3Bucket # Required
+      PolicyDocument: # Required
+        Statement:
+          - Sid: PublicReadForGetBucketObjects
+            Effect: Allow
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Join # ['', ['arn:aws:s3:::', !Ref 'KittensBucket', /*]]
+              - ''
+              - - 'arn:aws:s3:::'
+                - !Ref S3Bucket
+                - /*
+  Certificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties: 
+      CertificateTransparencyLoggingPreference: ENABLED
+      DomainName: !Ref FullDomainName # Required
+      DomainValidationOptions:
+        - DomainName: !Ref FullDomainName
+          HostedZoneId: !Ref DomainName 
+      ValidationMethod: DNS
+  CF:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases: 
+        - !Ref FullDomainName
+        Comment: Cloudfront Distribution pointing to Kittens S3 bucket
+        DefaultCacheBehavior:
+          AllowedMethods:  
+          - GET
+          - HEAD
+          Compress: true
+          ForwardedValues: 
+            QueryString: true 
+            Cookies:
+              Forward: none 
+          TargetOriginId: KittensOrigin  
+          ViewerProtocolPolicy: allow-all
+        DefaultRootObject: index.html
+        Enabled: true
+        HttpVersion: 'http2'
+        Origins: 
+        - DomainName: !Select [2, !Split ["/", !GetAtt S3Bucket.WebsiteURL]] 
+          Id: KittensOrigin
+          CustomOriginConfig: 
+            OriginProtocolPolicy: http-only
+        PriceClass: PriceClass_All
+        ViewerCertificate:  
+          AcmCertificateArn: !Ref Certificate
+          SslSupportMethod: sni-only
+  KittenDNSName: 
+    Type: AWS::Route53::RecordSetGroup
+    Properties:
+      HostedZoneId: !Ref DomainName
+      RecordSets: 
+        - Name: !Ref FullDomainName 
+          Type: A
+          AliasTarget:
+            HostedZoneId: Z2FDTNDATAQYW2  # Bu deger  dökümantaysona göre sabit olmali. Bizim kendi degerimizi yazalim dedik bayaaa vakit kaybettik. 
+            DNSName: !GetAtt CF.DomainName
+              
+Outputs:
+  BucketName: 
+    Description: S3 Bucket URL for Kittens Website
+    Value: !GetAtt S3Bucket.WebsiteURL
+  CloudfrontEndpoint:
+    Description: Endpoint for Kittens Cloudfront
+    Value: !GetAtt CF.DomainName
+  FullDomainName:
+    Description: Full Domain Name of my Application
+    Value: !Ref FullDomainName
