@@ -4,4 +4,6 @@ CloudFormation-Calismalar [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 
 ## Index 📜
 
-### 🔖 EC2 - Autoscaling - Load Balancer - Target Group
+### 🔖 [First Template](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/first-temp.yaml)
+
+SSH yaratiyor ve bunu yarattigimiz EC2 tanimlayarak ayaga kaldiriyoruz. 
