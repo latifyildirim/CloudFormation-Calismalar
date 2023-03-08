@@ -10,9 +10,7 @@ Yaml formatinda nasil komut yazilacagini inceledik.
 
 ### 🔖 [Amazon Template Örnegi](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/amazon-ornek.yaml)
 
-Bu formati klavuz olarak kullanarak kendi Templatelerimizi düzenleyebilriz.
-
-Yaml formatinda nasil komut yazilacagini inceledik. 
+Bu formati klavuz olarak kullanarak kendi Templatelerimizi düzenleyebilriz. 
 ### 🔖 [First Template](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/first-temp.yaml)
 
 SSH yaratiyor ve bunu yarattigimiz EC2 tanimlayarak ayaga kaldiriyoruz. 
