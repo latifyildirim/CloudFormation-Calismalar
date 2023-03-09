@@ -14,3 +14,7 @@ Bu formati klavuz olarak kullanarak kendi Templatelerimizi düzenleyebiliriz.
 ### 🔖 [First Template](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/first-temp.yaml)
 
 SSH yaratiyor ve bunu yarattigimiz EC2 tanimlayarak ayaga kaldiriyoruz. 
+
+### 🔖 [Hazir-AmiID-Degerli](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/hazir-AmiID-Degerli.yaml)
+
+AutoScalingGroup altinda LB, LBListner, LT ve TG dan olusan bir yapiyi UserData ile olusturuyoruz. 
