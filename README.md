@@ -4,18 +4,18 @@ CloudFormation-Calismalar [![Awesome](https://cdn.rawgit.com/sindresorhus/awesom
 
 ## Index 📜
 
-### 🔖 [Yaml Formati](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/example-yaml.yaml)
+### 🔖 [Yaml Formati](https://raw.githubusercontent.com/latifyildirim/CloudFormation-Calismalar/main/example-yaml.yaml)
 
 Yaml formatinda nasil komut yazilacagini inceledik. 
 
-### 🔖 [Amazon Template Örnegi](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/amazon-ornek.yaml)
+### 🔖 [Amazon Template Örnegi](https://raw.githubusercontent.com/latifyildirim/CloudFormation-Calismalar/main/amazon-ornek.yaml)
 
 Bu formati klavuz olarak kullanarak kendi Templatelerimizi düzenleyebiliriz. 
-### 🔖 [First Template](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/first-temp.yaml)
+### 🔖 [First Template](https://raw.githubusercontent.com/latifyildirim/CloudFormation-Calismalar/main/first-temp.yaml)
 
 SSH yaratiyor ve bunu yarattigimiz EC2 tanimlayarak ayaga kaldiriyoruz. 
 
-### 🔖 [Hazir-AmiID-Degerli](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/hazir-AmiID-Degerli.yaml)
+### 🔖 [Hazir-AmiID-Degerli](https://raw.githubusercontent.com/latifyildirim/CloudFormation-Calismalar/main/hazir-AmiID-Degerli.yaml)
 
 AutoScalingGroup altinda LB, LBListner, LT ve TG dan olusan bir yapiyi UserData ile olusturuyoruz. 
 
