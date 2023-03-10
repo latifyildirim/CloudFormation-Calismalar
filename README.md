@@ -18,3 +18,7 @@ SSH yaratiyor ve bunu yarattigimiz EC2 tanimlayarak ayaga kaldiriyoruz.
 ### 🔖 [Hazir-AmiID-Degerli](https://github.com/latifyildirim/CloudFormation-Calismalar/blob/main/hazir-AmiID-Degerli.yaml)
 
 AutoScalingGroup altinda LB, LBListner, LT ve TG dan olusan bir yapiyi UserData ile olusturuyoruz. 
+
+### 🔖 [Kittens static website with CloudFront](https://raw.githubusercontent.com/latifyildirim/CloudFormation-Calismalar/main/Kittens-static-website-cf.yaml)
+
+S3 Bucket de Static bir Web Sitesi olusutuyoruz. CloudFront arkasina alarak gecikme süresini düsürüyoruz. Ve Route53 deki Domain Name'e baglayarak kullanicilara sunuyoruz.
