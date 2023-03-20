@@ -22,3 +22,7 @@ AutoScalingGroup altinda LB, LBListner, LT ve TG dan olusan bir yapiyi UserData 
 ### 🔖 [Kittens static website with CloudFront](https://raw.githubusercontent.com/latifyildirim/CloudFormation-Calismalar/main/Kittens-static-website-cf.yaml)
 
 S3 Bucket de Static bir Web Sitesi olusutuyoruz. CloudFront arkasina alarak gecikme süresini düsürüyoruz. Ve Route53 deki Domain Name'e baglayarak kullanicilara sunuyoruz.
+
+### 🔖 [Kittens static website](https://raw.githubusercontent.com/latifyildirim/CloudFormation-Calismalar/main/Kittens-static-website-cf.yaml)
+
+S3 Bucket de Static bir Web Sitesi olusutuyoruz. CloudFront arkasina alarak gecikme süresini düsürüyoruz. Ve Route53 deki Domain Name'e baglayarak kullanicilara sunuyoruz.
