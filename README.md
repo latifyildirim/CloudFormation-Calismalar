@@ -23,6 +23,6 @@ AutoScalingGroup altinda LB, LBListner, LT ve TG dan olusan bir yapiyi UserData 
 
 S3 Bucket de Static bir Web Sitesi olusutuyoruz. CloudFront arkasina alarak gecikme süresini düsürüyoruz. Ve Route53 deki Domain Name'e baglayarak kullanicilara sunuyoruz.
 
-### 🔖 [Kittens static website](https://raw.githubusercontent.com/latifyildirim/CloudFormation-Calismalar/main/Kittens-static-website-cf.yaml)
+### 🔖 [Kittens static website](https://raw.githubusercontent.com/latifyildirim/CloudFormation-Calismalar/main/Kittens-static-website.yaml)
 
 S3 Bucket de Static bir Web Sitesi olusutuyoruz. Ve Route53 deki Domain Name'e baglayarak kullanicilara sunuyoruz.
